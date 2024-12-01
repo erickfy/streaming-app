@@ -2,6 +2,7 @@ package services
 
 import (
 	"errors"
+	"log"
 	"streaming/db/models"
 
 	"golang.org/x/crypto/bcrypt"
@@ -18,7 +19,10 @@ type DefaultUserService struct {
 }
 
 // Constructor del servicio de usuario
-func NewUserService(db *gorm.DB) UserService {
+func NewUserService(db *gorm.DB) *DefaultUserService {
+	if db == nil {
+		log.Fatal("Database connection cannot be nil")
+	}
 	return &DefaultUserService{DB: db}
 }
 
