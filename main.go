@@ -1,10 +1,15 @@
 package main
 
 import (
+	"fmt"
 	"log"
+	"os"
 	"streaming/controllers"
-	"streaming/db/models"
-	"streaming/db/models/database"
+
+	// "streaming/db/models"
+	// "streaming/db/models/database"
+
+	"streaming/utils"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/logger"
@@ -12,24 +17,37 @@ import (
 )
 
 func main() {
-	// database conf
-		database.ConnectDB()
+	// CONFS
+	utils.InitConf()
 
-	// Migración de modelos
-	err := database.DB.AutoMigrate(
-		&models.User{},
-		&models.Video{},
-		&models.Subscription{},
-		&models.Comment{},
-		&models.Playlist{},
-		&models.Payment{},
-		&models.Like{},
-	)
-	if err != nil {
-		log.Fatal("Failed to migrate models:", err)
-	}
 
-	log.Println("Database migration completed")
+	// // database conf
+	// 	database.ConnectDB()
+
+	// // Migración de modelos
+	// err := database.DB.AutoMigrate(
+	// 	&models.User{},
+	// 	&models.Video{},
+	// 	&models.Subscription{},
+	// 	&models.Comment{},
+	// 	&models.Playlist{},
+	// 	&models.Payment{},
+	// 	&models.Like{},
+	// )
+	// if err != nil {
+	// 	log.Fatal("Failed to migrate models:", err)
+	// }
+
+	// log.Println("Database migration completed")
+
+// Leer una variable de entorno
+	// Leer las variables de entorno
+	dbURL := os.Getenv("DATABASE_URL")
+	DB_SCHEMA := os.Getenv("DB_SCHEMA")
+
+	// Usar las variables de entorno
+	fmt.Println("URL de la base de datos:", dbURL)
+	fmt.Println("Entorno:", DB_SCHEMA)
 
 
 	engine := html.New("./templates", ".html")
