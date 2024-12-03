@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Streaming Platform</title>
+    <style>
+      /* General Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+
+      /* Navbar Styles */
+      .navbar {
+        background-color: #212121;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .navbar .logo {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .navbar .search-bar {
+        flex: 1;
+        margin: 0 20px;
+        display: flex;
+        align-items: center;
+      }
+
+      .navbar .search-bar input {
+        width: 100%;
+        padding: 8px;
+        border: none;
+        border-radius: 20px;
+        outline: none;
+      }
+
+      .navbar .user-icon {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+      }
+
+      .navbar .user-icon img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+      }
+
+      /* Main Content Styles */
+      .main-content {
+        display: flex;
+        flex: 1;
+        overflow: hidden;
+      }
+
+      /* Sidebar Styles */
+      .sidebar {
+        width: 240px;
+        background-color: #f1f1f1;
+        padding: 20px 10px;
+        overflow-y: auto;
+      }
+
+      .sidebar ul {
+        list-style: none;
+      }
+
+      .sidebar ul li {
+        margin-bottom: 10px;
+        padding: 10px;
+        background: #fff;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .sidebar ul li:hover {
+        background: #ddd;
+      }
+
+      /* Video Section Styles */
+      .video-section {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        overflow-y: auto;
+      }
+
+      .video-container {
+        background: #000;
+        margin-bottom: 20px;
+        position: relative;
+      }
+
+      .video-container video {
+        width: 100%;
+        height: auto;
+      }
+
+      .video-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin: 10px 0;
+      }
+
+      /* Playlist Section */
+      .playlist-section {
+        width: 320px;
+        background-color: #f1f1f1;
+        padding: 20px;
+        overflow-y: auto;
+      }
+
+      .playlist-section h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .playlist-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: #fff;
+        padding: 10px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+
+      .playlist-item:hover {
+        transform: scale(1.02);
+      }
+
+      .playlist-item img {
+        width: 80px;
+        height: 60px;
+        border-radius: 4px;
+        object-fit: cover;
+      }
+
+      .playlist-item div {
+        flex: 1;
+      }
+
+      .playlist-item div h4 {
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+
+      .playlist-item div p {
+        font-size: 12px;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="logo">StreamTube</div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search..." />
+      </div>
+      <div class="user-icon">
+        <img src="https://via.placeholder.com/30" alt="User Icon" />
+        <span>Username</span>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <ul>
+          <li>Home</li>
+          <li>Trending</li>
+          <li>Subscriptions</li>
+          <li>Library</li>
+          <li>History</li>
+        </ul>
+      </div>
+
+      <!-- Video Section -->
+      <div class="video-section">
+        <div class="video-container">
+          <video
+            id="streamVideo"
+            src="http://localhost:3000/stream"
+            controls
+            autoplay
+          ></video>
+        </div>
+        <div class="video-title">Sample Video Title</div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+          tristique nisl et tristique vehicula. Duis in nisi id nulla
+          pellentesque.
+        </p>
+      </div>
+
+      <!-- Playlist Section -->
+      <div class="playlist-section">
+        <h3>Up Next</h3>
+        <div class="playlist-item">
+          <img src="https://via.placeholder.com/80x60" alt="Thumbnail" />
+          <div>
+            <h4>Video Title 1</h4>
+            <p>500K views · 1 week ago</p>
+          </div>
+        </div>
+        <div class="playlist-item">
+          <img src="https://via.placeholder.com/80x60" alt="Thumbnail" />
+          <div>
+            <h4>Video Title 2</h4>
+            <p>250K views · 2 days ago</p>
+          </div>
+        </div>
+        <div class="playlist-item">
+          <img src="https://via.placeholder.com/80x60" alt="Thumbnail" />
+          <div>
+            <h4>Video Title 3</h4>
+            <p>1M views · 1 month ago</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

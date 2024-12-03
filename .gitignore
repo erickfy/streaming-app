@@ -1,0 +1,14 @@
+// Avoid for large files
+*.mp4
+
+// Environments
+.env.*
+*.env
+env
+
+// Environment Example
+!.env.example
+
+
+// Databases
+*.db
