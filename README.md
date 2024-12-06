@@ -1,6 +1,7 @@
 - For her todo 3 December
 
-- Diseñar las maquetas para la aplicación de streaming
+- [x] Diseñar las maquetas para la aplicación de streaming
+
 - Diseñar las rutas para las vistas
 
   - get feed main
@@ -17,3 +18,8 @@
 
 - General
   - post define categories for videos
+
+FOR 4 December
+
+- Add envs configs
+- add post amx the first
