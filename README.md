@@ -23,7 +23,7 @@ Este es un proyecto para una aplicación de streaming que permite a los usuarios
 ### 4 de diciembre
 - **Tareas:**
   - Agregar configuraciones de variables de entorno (envs).
-  - Integrar la API de American Express en el sistema.
+  - Integrar Base de Datos y Configuración de rutas esenciales de Ingreso.
 
 ## Estructura de la base de datos
 
