@@ -7,6 +7,8 @@ type User struct {
 	Password      string         `gorm:"not null"`
 	ProfilePicURL string         `gorm:"size:255"`
 	Subscribers   []Subscription `gorm:"foreignKey:SubscribedToID"`
+	Videos    []Video        	`gorm:"foreignKey:UploadedBy"`
+
 	CreatedAt     int64
 	UpdatedAt     int64
 }
